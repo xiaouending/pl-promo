@@ -1,0 +1,1 @@
+const LazyLoad=new window.LazyLoad;console.log(LazyLoad);
