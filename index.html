@@ -12,6 +12,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <style>
+        .lazy {
+            transition: all .3s linear;
+            opacity: 0;
+        }
+
+        .loaded {
+            opacity: 1;
+        }
+
+        .coupons-car-image {
+            transition: all .7s linear;
+            right: -25%;
+            position: absolute;
+        }
+
+        .coupons-car-image.loaded {
+            right: 0;
+        }
+    </style>
     <div class="flex font-montserrat flex-col min-h-screen overflow-hidden">
         <header class="bg-orange lg:bg-white z-50 w-full fixed h-24 lg:h-32">
             <div class="container">
@@ -72,16 +92,16 @@
                     </div>
                     <div class="text-center w-2/3 flex flex-col items-center justify-center">
                         <div class="h-72">
-                            <img class="lazy h-full opacity-0" data-src="./img/caption-min.png" alt="Наши подарки заводят">
+                            <img class="lazy h-full" data-src="./img/caption-min.png" alt="Наши подарки заводят">
                         </div>
                         <div class="w-full">
-                            <img class="lazy opacity-0" data-src="./img/bg-cars-min.png" alt="Автомобили">
+                            <img class="lazy" data-src="./img/bg-cars-min.png" alt="Автомобили">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    
+
         <main class="flex-grow">
             <div class="mt-20 container">
                 <section id="prizes">
@@ -97,7 +117,7 @@
                       </div>
                       <div class="lg:flex lg:h-96 mb-24">
                         <div class="lg:w-2/5 flex items-center justify-center bg-light">
-                            <img class="lazy h-full opacity-0" data-src="img/car-red-mod-min.png" />
+                            <img class="lazy h-full" data-src="img/car-red-mod-min.png" />
                         </div>
                         <div class="lg:flex lg:w-3/5">
                           <button data-id="prize-button" class="flex flex-col w-full lg:w-1/2 bg-light p-7 text-left" aria-label="Подробнее">
@@ -226,7 +246,7 @@
                         </div>
                         <div class="w-1/3 bg-white">
                             <div class="coupons-car">
-                                <img class="coupons-car-image lazy opacity-0" data-src="img/car-blue-min.png" />
+                                <img class="coupons-car-image lazy" data-src="img/car-blue-min.png" />
                             </div>
                         </div>
                     </div>
