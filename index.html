@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1920, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#FFFFFF">
     <title>Планета Пермь / Наши подарки заводят</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,29 +13,76 @@
 </head>
 <body>
     <div class="flex font-montserrat flex-col min-h-screen overflow-hidden">
-        <header class="bg-white z-50 w-full fixed h-32">
+        <header class="bg-orange lg:bg-white z-50 w-full fixed h-24 lg:h-32">
             <div class="container">
-                <div class="flex items-center justify-between h-32">
-                <a href="/">
-                    <img src='./img/logo.svg' alt="Лого" />
-                </a>
-                <nav class="flex">
-                    <ul class="list-none flex text-sm">
-                    <li class="mr-8"><a class="text-black hover:text-grey" href="#prizes">Призы</a></li>
-                    <li class="mr-8"><a class="text-black hover:text-grey" href="#rules">Правила участия</a></li>
-                    <li class="mr-8"><a class="text-black hover:text-grey" href="#coupons">Купоны</a></li>
-                    <li><a class="text-black hover:text-grey" href="#lk">Личный кабинет</a></li>
-                    </ul>
-                </nav>
+                <div class="flex flex-row-reverse lg:flex-row items-center justify-between h-24 lg:h-32">
+                    <a class="p-2 -ml-2" href="/">
+                        <img class="lazy lg:hidden"
+                             data-src='./img/logo-light.svg'
+                             alt="Лого"
+                        />
+                        <img class="lazy hidden lg:flex"
+                             data-src='./img/logo-dark.svg'
+                             alt="Лого"
+                        />
+                    </a>
+                    <button class="p-2 lg:hidden" id="open-menu" aria-label="Открыть меню">
+                        <img class="lazy" data-src="./img/hamburger.svg">
+                    </button>
+                    <nav id="navigation"
+                         class="hidden fixed p-5 lg:p-0 lg:static h-full w-full left-0 lg:w-auto lg:h-auto top-0 lg:flex bg-white">
+                        <button class="lg:hidden mb-12" id="close-menu" aria-label="Закрыть меню">
+                            <img src="./img/close-icon.svg" alt="">
+                        </button>
+                        <ul class="list-none lg:flex text-sm">
+                            <li class="mr-6 mb-6 lg:mb-0"><a class="text-black hover:text-grey p-2" href="#prizes">Призы</a></li>
+                            <li class="mr-6 mb-6 lg:mb-0"><a class="text-black hover:text-grey p-2" href="#rules">Правила участия</a></li>
+                            <li class="mr-6 mb-6 lg:mb-0"><a class="text-black hover:text-grey p-2" href="#coupons">Купоны</a></li>
+                            <li><a class="text-black hover:text-grey p-2" href="#lk">Личный кабинет</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </header>
+        <div class="main-screen">
+            <div class="container">
+                <div class="main-screen-content">
+                    <div class="w-1/3">
+                        <div class="main-period">
+                            <div class="w-20">
+                                <div class="main-period-number">02</div>
+                                <div class="main-period-text">августа</div>
+                            </div>
+                            <div class="main-period-dash"></div>
+                            <div class="w-20">
+                                <div class="main-period-number">10</div>
+                                <div class="main-period-text">сентября</div>
+                            </div>
+                        </div>
+                        <div class="title-wrapper">
+                            <h1 class="mb-10 text-xl text-white">
+                                Совершайте покупки
+                                и станьте обладателем одного 
+                                из двух авто Hyundai Solaris
+                            </h1>
+                            <button class="button-primary" aria-label="Участвовать">
+                                Участвовать
+                            </button>
+                        </div>
+                    </div>
+                    <div class="text-center w-2/3 flex flex-col items-center justify-center">
+                        <div class="h-72">
+                            <img class="lazy h-full" data-src="./img/caption-min.png" alt="Наши подарки заводят">
+                        </div>
+                        <div class="w-full">
+                            <img class="lazy" data-src="./img/bg-cars-min.png" alt="Автомобили">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     
         <main class="flex-grow">
-            <div class="main-screen flex flex-col items-center justify-center bg-orange">
-
-            </div>
-
             <div class="mt-20 container">
                 <section id="prizes">
                     <div class="flex items-center mb-10">
@@ -47,13 +95,14 @@
                         </div>
                         <h4 class="text-2xl text-black uppercase font-semibold">Призы</h4>
                       </div>
-                      <div class="flex h-96 mb-24">
-                        <div class="w-2/5 flex items-center justify-center bg-light">
-                            <img class="h-full" src="img/car-red-mod.png" />
+                      <div class="lg:flex lg:h-96 mb-24">
+                        <div class="lg:w-2/5 flex items-center justify-center bg-light">
+                            <img class="lazy h-full" data-src="img/car-red-mod-min.png" />
                         </div>
-                        <div class="flex w-3/5">
-                          <button class="w-1/2 bg-light p-7 text-left" aria-label="2 автомобиля hyundai solaris">
-                            <div class="flex items-center text-purple mb-8">
+                        <div class="lg:flex lg:w-3/5">
+                          <button data-id="prize-button" class="flex flex-col w-full lg:w-1/2 bg-light p-7 text-left" aria-label="Подробнее">
+                            <div aria-hidden="true"
+                                 class="flex items-center text-purple mb-5">
                               <span class="mr-4 text-3xl font-sf">1</span>
                               <svg width="33" height="8" viewBox="0 0 53 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                   <path
@@ -61,7 +110,8 @@
                                       fill="#8C1A6F"/>
                               </svg>
                             </div>
-                            <div class="flex items-center justify-center border relative rounded-full border-purple w-48 h-48 ml-5">
+                            <div data-content-id="info" aria-hidden="true"
+                                 class="flex items-center justify-center border relative rounded-full border-purple w-48 h-48 ml-5">
                               <div class="flex items-end justify-end absolute">
                                 <div class="with-caption text-purple text-9xl font-sf"
                                      data-caption="автомобиля
@@ -70,9 +120,16 @@
                                 </div>
                               </div>
                             </div>
+                            <div data-content-id="details" class="hidden pl-12 pr-4 w-full" aria-hidden="true">
+                                <p class="mb-4">Главные призы акции - два автомобиля Hyundai Solaris.</p>
+                                <p class="mb-4">Год выпуска - 2021</p>
+                                <p class="mb-4">Тип кузова - Седан</p>
+                                <p>АКПП 6 ступеней, двигатель бензиновый 1,6</p>
+                            </div>
                           </button>
-                          <button class="w-1/2 bg-orange p-7 text-left" aria-label="45 подарочных карт планета">
-                            <div class="flex items-center text-white mb-8">
+                          <button data-id="prize-button" class="flex flex-col w-full lg:w-1/2 bg-orange py-7 text-left" aria-label="Подробнее">
+                            <div aria-hidden="true"
+                                 class="pl-7 flex items-center text-white mb-5">
                               <span class="mr-4 text-3xl font-sf">2</span>
                               <svg width="33" height="8" viewBox="0 0 53 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                   <path
@@ -80,7 +137,9 @@
                                       fill="#FFFFFF"/>
                               </svg>
                             </div>
-                            <div class="flex items-center justify-center border relative rounded-full border-white w-48 h-48 ml-5">
+                            <div data-content-id="info"
+                                 aria-hidden="true"
+                                 class="flex w-full items-center justify-center border relative rounded-full border-white w-48 h-48 ml-5">
                               <div class="flex items-end justify-end absolute">
                                 <div class="with-caption text-white text-9xl font-sf"
                                     data-caption="подарочных
@@ -88,6 +147,28 @@
                                   45
                                 </div>
                               </div>
+                            </div>
+                            <div data-content-id="details" class="hidden w-full overflow-y-scroll h-full" aria-hidden="true">
+                                <div class="border-t border-grey text-white flex items-center justify-between py-2 pl-12 pr-4">
+                                    <div class="mr-4"><span class="text-3xl font-semibold font-sf mr-2">10</span><span>шт.</span></div>
+                                    <div>Подарочная карта «Планета» <br> номиналом <strong class="font-sf">5 000</strong> рублей</div>
+                                </div>
+                                <div class="border-t border-grey text-white flex items-center justify-between py-2 pl-12 pr-4">
+                                    <div class="mr-4"><span class="text-3xl font-semibold font-sf mr-2">10</span><span>шт.</span></div>
+                                    <div>Подарочная карта «Планета» <br> номиналом <strong class="font-sf">10 000</strong> рублей</div>
+                                </div>
+                                <div class="border-t border-grey text-white flex items-center justify-between py-2 pl-12 pr-4">
+                                    <div class="mr-4"><span class="text-3xl font-semibold font-sf mr-2">10</span><span>шт.</span></div>
+                                    <div>Подарочная карта «Планета» <br> номиналом <strong class="font-sf">15 000</strong> рублей</div>
+                                </div>
+                                <div class="border-t border-grey text-white flex items-center justify-between py-2 pl-12 pr-4">
+                                    <div class="mr-4"><span class="text-3xl font-semibold font-sf mr-2">10</span><span>шт.</span></div>
+                                    <div>Подарочная карта «Планета» <br> номиналом <strong class="font-sf">20 000</strong> рублей</div>
+                                </div>
+                                <div class="border-t border-grey text-white flex items-center justify-between py-2 pl-12 pr-4">
+                                    <div class="mr-4"><span class="text-3xl font-semibold font-sf mr-2">5</span><span>шт.</span></div>
+                                    <div>Подарочная карта «Планета» <br> номиналом <strong class="font-sf">30 000</strong> рублей</div>
+                                </div>
                             </div>
                           </button>
                         </div>
@@ -108,8 +189,8 @@
                         </div>
                         <div class="flex rules">
                           <ol>
-                              <div class="flex">
-                                <div class="class="mr-10"">
+                              <div class="lg:flex">
+                                <div class="lg:mr-10">
                                     <li>
                                         <span>В период с <strong>10:00 2 августа</strong> по <strong>23:00 10 сентября 2021г.</strong> совершайте покупку(-и) на сумму более 2000 рублей в одном чеке в ТРЦ «Планета» или от 3500 рублей в гипермаркете «Лента».</span>
                                       </li>
@@ -123,36 +204,7 @@
                         </div>
                       </div>
                 </section>
-            </div>
-            <section class="mb-28" id="coupons">
-                <div class="flex items-center mb-10 pl-48">
-                    <div class="flex items-center justify-center border border-black w-24 h-24 mr-5 rounded-full">
-                        <svg width="55" height="8" viewBox="0 0 53 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M52.3536 4.35355C52.5488 4.15829 52.5488 3.84171 52.3536 3.64645L49.1716 0.464466C48.9763 0.269204 48.6597 0.269204 48.4645 0.464466C48.2692 0.659728 48.2692 0.976311 48.4645 1.17157L51.2929 4L48.4645 6.82843C48.2692 7.02369 48.2692 7.34027 48.4645 7.53553C48.6597 7.7308 48.9763 7.7308 49.1716 7.53553L52.3536 4.35355ZM0 4.5H52V3.5H0V4.5Z"
-                                fill="#2D2D2D"/>
-                        </svg>
-                    </div>
-                    <h4 class="text-2xl text-black uppercase font-semibold">Купоны</h4>
-                </div>
-                <div class="flex">
-                    <div class="w-2/3 py-14">
-                        <ol class="relative">
-                            <li><a href="#">Видеоинструкция</a></li>
-                            <li><a href="#">Скачать правила акции</a></li>
-                            <li><a href="#">Согласие на обработку персональных данных</a></li>
-                            <li><a href="#">Ваши вопросы - наши ответы</a></li>
-                        </ol>
-                    </div>
-                    <div class="w-1/3 bg-white relative">
-                        <div class="coupons-car">
-                            <img class="h-full" src="img/car-blue.png" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="pl-48" id="lk">
-                <div class="mb-24">
+                <section class="mb-28" id="coupons">
                     <div class="flex items-center mb-10">
                         <div class="flex items-center justify-center border border-black w-24 h-24 mr-5 rounded-full">
                             <svg width="55" height="8" viewBox="0 0 53 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -161,17 +213,46 @@
                                     fill="#2D2D2D"/>
                             </svg>
                         </div>
-                        <h4 class="text-2xl text-black uppercase font-semibold">Как получить зарегистрированные купоны</h4>
+                        <h4 class="text-2xl text-black uppercase font-semibold">Купоны</h4>
                     </div>
-                    <div class="mb-10 text-blackLighter">
-                        <p>Для участия в акции вам необходимо зарегистрировать чек в Личном кабинете mall.id.</p>
-                        <p>Это позволит вам управлять регистрациями в акции, настраивать уведомления и следить за результатами розыгрыша.</p>
+                    <div class="flex items-center relative">
+                        <div class="coupons-overlay w-2/3 py-14">
+                            <ol class="relative">
+                                <li><a href="#">Видеоинструкция</a></li>
+                                <li><a href="#">Скачать правила акции</a></li>
+                                <li><a href="#">Согласие на обработку персональных данных</a></li>
+                                <li><a href="#">Ваши вопросы - наши ответы</a></li>
+                            </ol>
+                        </div>
+                        <div class="w-1/3 bg-white">
+                            <div class="coupons-car">
+                                <img class="coupons-car-image lazy" data-src="img/car-blue-min.png" />
+                            </div>
+                        </div>
                     </div>
-                    <button class="button-primary" aria-label="Войти в личный кабинет">
-                        Войти в личный кабинет
-                    </button>
-                </div>
-            </section>
+                </section>
+                <section id="lk">
+                    <div class="mb-24">
+                        <div class="flex items-center mb-10">
+                            <div class="flex items-center justify-center border border-black w-24 h-24 mr-5 rounded-full">
+                                <svg width="55" height="8" viewBox="0 0 53 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M52.3536 4.35355C52.5488 4.15829 52.5488 3.84171 52.3536 3.64645L49.1716 0.464466C48.9763 0.269204 48.6597 0.269204 48.4645 0.464466C48.2692 0.659728 48.2692 0.976311 48.4645 1.17157L51.2929 4L48.4645 6.82843C48.2692 7.02369 48.2692 7.34027 48.4645 7.53553C48.6597 7.7308 48.9763 7.7308 49.1716 7.53553L52.3536 4.35355ZM0 4.5H52V3.5H0V4.5Z"
+                                        fill="#2D2D2D"/>
+                                </svg>
+                            </div>
+                            <h4 class="text-2xl text-black uppercase font-semibold">Как получить зарегистрированные купоны</h4>
+                        </div>
+                        <div class="mb-10 text-blackLighter">
+                            <p>Для участия в акции вам необходимо зарегистрировать чек в Личном кабинете mall.id.</p>
+                            <p>Это позволит вам управлять регистрациями в акции, настраивать уведомления и следить за результатами розыгрыша.</p>
+                        </div>
+                        <button class="button-primary" aria-label="Войти в личный кабинет">
+                            Войти в личный кабинет
+                        </button>
+                    </div>
+                </section>
+            </div>
         </main>
     </div>
 
@@ -187,14 +268,35 @@
                 <p><strong>ТРЦ «Планета», г. Пермь, <br/> ш. Космонавтов, 162Б</strong></p>
             </div>
             <div class="flex">
-                <a class="mr-4" href=""><img src="./img/vk.svg" alt="VK"></a>
-                <a class="mr-4" href=""><img src="./img/facebook.svg" alt="Facebook"></a>
-                <a href=""><img src="./img/instagram.svg" alt="Instagram"></a>
+                <a class="mr-4 bg-purple hover:bg-purpleDark fill-current rounded-full" href="">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1694 20.887C16.1694 20.887 16.4582 20.8567 16.6061 20.7068C16.7415 20.5694 16.7368 20.3101 16.7368 20.3101C16.7368 20.3101 16.7188 19.0995 17.3143 18.9208C17.9012 18.745 18.6548 20.0915 19.4546 20.6093C20.0588 21.0007 20.5173 20.9151 20.5173 20.9151L22.6545 20.887C22.6545 20.887 23.772 20.822 23.2422 19.9925C23.1984 19.9246 22.9331 19.3787 21.6536 18.2575C20.3131 17.0839 20.4931 17.2737 22.1067 15.2432C23.0896 14.0068 23.4825 13.2519 23.3596 12.9292C23.243 12.6204 22.5199 12.7024 22.5199 12.7024L20.1143 12.7164C20.1143 12.7164 19.9359 12.6935 19.8036 12.7681C19.6745 12.8413 19.5908 13.0119 19.5908 13.0119C19.5908 13.0119 19.2105 13.9684 18.7026 14.7823C17.6313 16.4989 17.2032 16.5897 17.0279 16.4834C16.6202 16.2345 16.7219 15.4848 16.7219 14.9522C16.7219 13.2881 16.9896 12.5946 16.2015 12.4151C15.9401 12.3553 15.7476 12.3161 15.0785 12.3095C14.2201 12.3013 13.4939 12.3124 13.0822 12.5022C12.8083 12.6285 12.597 12.9107 12.7262 12.9269C12.885 12.9469 13.245 13.0185 13.4359 13.2638C13.6825 13.5806 13.6738 14.2912 13.6738 14.2912C13.6738 14.2912 13.8155 16.25 13.3428 16.493C13.0188 16.6599 12.5743 16.3194 11.6188 14.7617C11.1297 13.964 10.7604 13.0821 10.7604 13.0821C10.7604 13.0821 10.6892 12.9173 10.5616 12.8287C10.4074 12.7216 10.1922 12.6884 10.1922 12.6884L7.90637 12.7024C7.90637 12.7024 7.56283 12.7113 7.43684 12.8523C7.32493 12.9772 7.42823 13.2364 7.42823 13.2364C7.42823 13.2364 9.21794 17.1888 11.2448 19.1808C13.1034 21.0066 15.2131 20.887 15.2131 20.887H16.1694Z" fill="#F5F5F5"/>
+                    </svg>      
+                </a>
+                <a class="mr-4 bg-purple hover:bg-purpleDark fill-current rounded-full" href="">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6306 23.3444L14.9019 23.381V17.2302H13.5386V14.6852H14.9019V13.1571C14.9019 11.0808 15.6717 9.84619 17.8587 9.84619H19.6795V12.3916H18.5414C17.69 12.3916 17.6337 12.7472 17.6337 13.411L17.6306 14.6849H19.6924L19.4512 17.2299H17.6306V23.3444Z" fill="#F5F5F5"/>
+                    </svg>  
+                </a>
+                <a class="bg-purple hover:bg-purpleDark fill-current rounded-full" href="">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z"/>
+                    <path d="M19.6689 8H12.331C9.94287 8 8 9.94287 8 12.331V19.669C8 22.0571 9.94287 24 12.331 24H19.669C22.0571 24 24 22.0571 24 19.669V12.331C24 9.94287 22.0571 8 19.6689 8V8ZM16 20.3749C13.5876 20.3749 11.6251 18.4123 11.6251 16C11.6251 13.5876 13.5876 11.6251 16 11.6251C18.4123 11.6251 20.3749 13.5876 20.3749 16C20.3749 18.4123 18.4123 20.3749 16 20.3749ZM20.4795 12.6569C19.7666 12.6569 19.1867 12.077 19.1867 11.3641C19.1867 10.6512 19.7666 10.0713 20.4795 10.0713C21.1924 10.0713 21.7723 10.6512 21.7723 11.3641C21.7723 12.077 21.1924 12.6569 20.4795 12.6569Z" fill="#F5F5F5"/>
+                    <path d="M15.9999 12.563C14.1049 12.563 12.563 14.1047 12.563 15.9999C12.563 17.8949 14.1049 19.4368 15.9999 19.4368C17.895 19.4368 19.4368 17.8949 19.4368 15.9999C19.4368 14.1047 17.895 12.563 15.9999 12.563Z" fill="#F5F5F5"/>
+                    <path d="M20.4792 11.0093C20.2837 11.0093 20.1245 11.1685 20.1245 11.364C20.1245 11.5596 20.2837 11.7187 20.4792 11.7187C20.6749 11.7187 20.8341 11.5597 20.8341 11.364C20.8341 11.1683 20.6749 11.0093 20.4792 11.0093Z" fill="#F5F5F5"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.4.0/dist/lazyload.min.js"></script>
-    <script type="module" src="./js/scripts.js"></script>
+    <script src="./js/scripts.js"></script>
 </body>
 </html>
+
+
+
+
