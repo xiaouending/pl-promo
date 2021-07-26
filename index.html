@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1920, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#FFFFFF">
     <title>Планета Пермь / Наши подарки заводят</title>
@@ -13,6 +13,7 @@
 </head>
 <body>
     <style>
+        /* lazyload animation */
         .lazy {
             transition: all .3s linear;
             opacity: 0;
@@ -33,7 +34,7 @@
         }
     </style>
     <div class="flex font-montserrat flex-col min-h-screen overflow-hidden">
-        <header class="bg-orange lg:bg-white z-50 w-full fixed h-24 lg:h-32">
+        <header class="bg-orange lg:bg-white z-30 w-full fixed h-24 lg:h-32">
             <div class="container">
                 <div class="flex flex-row-reverse lg:flex-row items-center justify-between h-24 lg:h-32">
                     <a class="p-2 -ml-2" href="/">
@@ -67,7 +68,7 @@
         <div class="main-screen">
             <div class="container">
                 <div class="main-screen-content">
-                    <div class="w-1/3">
+                    <div class="lg:w-1/3">
                         <div class="main-period">
                             <div class="w-20">
                                 <div class="main-period-number">02</div>
@@ -79,7 +80,7 @@
                                 <div class="main-period-text">сентября</div>
                             </div>
                         </div>
-                        <div class="title-wrapper">
+                        <div class="title-wrapper hidden lg:block">
                             <h1 class="mb-10 text-xl text-white">
                                 Совершайте покупки
                                 и станьте обладателем одного 
@@ -90,51 +91,60 @@
                             </button>
                         </div>
                     </div>
-                    <div class="text-center w-2/3 flex flex-col items-center justify-center">
-                        <div class="h-72">
+                    <div class="text-center lg:w-2/3 flex flex-col items-end lg:items-center justify-center">
+                        <div class="h-44 lg:h-72">
                             <img class="lazy h-full" data-src="./img/caption-min.png" alt="Наши подарки заводят">
                         </div>
                         <div class="w-full">
-                            <img class="lazy" data-src="./img/bg-cars-min.png" alt="Автомобили">
+                            <img class="lazy hidden lg:block" data-src="./img/bg-cars-min.png" alt="Автомобили">
+                            <img class="lazy lg:hidden" data-src="./img/bg-cars-mob-min.png" alt="Автомобили">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <div class="container">
+            <div class="title-wrapper mt-10 lg:hidden justify-center w-full text-center">
+                <h1 class="mb-10 text-xl text-black">
+                    Совершайте покупки
+                    и станьте обладателем одного 
+                    из двух авто Hyundai Solaris
+                </h1>
+                <button class="button-primary mx-auto" aria-label="Участвовать">
+                    Участвовать
+                </button>
+            </div>
+        </div>
+
         <main class="flex-grow">
             <div class="mt-20 container">
                 <section id="prizes">
-                    <div class="flex items-center mb-10">
-                        <div class="flex items-center justify-center border border-black w-24 h-24 mr-5 rounded-full">
-                          <svg width="55" height="8" viewBox="0 0 53 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path
-                                  d="M52.3536 4.35355C52.5488 4.15829 52.5488 3.84171 52.3536 3.64645L49.1716 0.464466C48.9763 0.269204 48.6597 0.269204 48.4645 0.464466C48.2692 0.659728 48.2692 0.976311 48.4645 1.17157L51.2929 4L48.4645 6.82843C48.2692 7.02369 48.2692 7.34027 48.4645 7.53553C48.6597 7.7308 48.9763 7.7308 49.1716 7.53553L52.3536 4.35355ZM0 4.5H52V3.5H0V4.5Z"
-                                  fill="#2D2D2D"/>
-                          </svg>
+                    <div class="flex md:items-center mb-10">
+                        <div class="flex items-center flex-none justify-center border border-black w-8 h-8 md:w-24 md:h-24 mr-4 md:mr-5 rounded-full arrow">
+                            <svg width="55" height="8" viewBox="0 0 53 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M52.3536 4.35355C52.5488 4.15829 52.5488 3.84171 52.3536 3.64645L49.1716 0.464466C48.9763 0.269204 48.6597 0.269204 48.4645 0.464466C48.2692 0.659728 48.2692 0.976311 48.4645 1.17157L51.2929 4L48.4645 6.82843C48.2692 7.02369 48.2692 7.34027 48.4645 7.53553C48.6597 7.7308 48.9763 7.7308 49.1716 7.53553L52.3536 4.35355ZM0 4.5H52V3.5H0V4.5Z" fill="#2D2D2D"></path>
+                            </svg>
                         </div>
-                        <h4 class="text-2xl text-black uppercase font-semibold">Призы</h4>
+                        <h4 class="text-xl md:text-2xl text-black uppercase font-semibold">Призы</h4>
                       </div>
-                      <div class="lg:flex lg:h-96 mb-24">
-                        <div class="lg:w-2/5 flex items-center justify-center bg-light">
-                            <img class="lazy h-full" data-src="img/car-red-mod-min.png" />
+                      <div class="flex flex-col xl:flex-row xl:h-96 mb-12 md:mb-24">
+                        <div class="xl:w-2/5 flex items-center justify-center bg-light">
+                            <img class="lazy h-full entered loaded" data-src="img/car-red-mod-min.png" data-ll-status="loaded" src="img/car-red-mod-min.png">
                         </div>
-                        <div class="lg:flex lg:w-3/5">
-                          <button data-id="prize-button" class="flex flex-col w-full lg:w-1/2 bg-light p-7 text-left" aria-label="Подробнее">
-                            <div aria-hidden="true"
-                                 class="flex items-center text-purple mb-5">
+                        <div class="md:flex xl:w-3/5">
+                          <button data-id="prize-button" class="flex flex-col items-center md:items-start w-full md:w-1/2 bg-light p-7 text-left" aria-label="Подробнее">
+                            <div aria-hidden="true" class="flex items-center self-start text-purple mb-5">
                               <span class="mr-4 text-3xl font-sf">1</span>
                               <svg width="33" height="8" viewBox="0 0 53 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path
-                                      d="M52.3536 4.35355C52.5488 4.15829 52.5488 3.84171 52.3536 3.64645L49.1716 0.464466C48.9763 0.269204 48.6597 0.269204 48.4645 0.464466C48.2692 0.659728 48.2692 0.976311 48.4645 1.17157L51.2929 4L48.4645 6.82843C48.2692 7.02369 48.2692 7.34027 48.4645 7.53553C48.6597 7.7308 48.9763 7.7308 49.1716 7.53553L52.3536 4.35355ZM0 4.5H52V3.5H0V4.5Z"
-                                      fill="#8C1A6F"/>
+                                  <path d="M52.3536 4.35355C52.5488 4.15829 52.5488 3.84171 52.3536 3.64645L49.1716 0.464466C48.9763 0.269204 48.6597 0.269204 48.4645 0.464466C48.2692 0.659728 48.2692 0.976311 48.4645 1.17157L51.2929 4L48.4645 6.82843C48.2692 7.02369 48.2692 7.34027 48.4645 7.53553C48.6597 7.7308 48.9763 7.7308 49.1716 7.53553L52.3536 4.35355ZM0 4.5H52V3.5H0V4.5Z" fill="#8C1A6F"></path>
                               </svg>
                             </div>
-                            <div data-content-id="info" aria-hidden="true"
-                                 class="flex items-center justify-center border relative rounded-full border-purple w-48 h-48 ml-5">
+                            <div data-content-id="info"
+                                 aria-hidden="true"
+                                 class="flex items-center justify-center border relative rounded-full border-purple w-48 h-48 md:ml-5 mb-10 md:mb-0">
                               <div class="flex items-end justify-end absolute">
-                                <div class="with-caption text-purple text-9xl font-sf"
-                                     data-caption="автомобиля
+                                <div class="with-caption text-purple text-9xl xl:text-8xl font-sf" data-caption="автомобиля
                                      hyundai solaris">
                                   2
                                 </div>
@@ -147,22 +157,18 @@
                                 <p>АКПП 6 ступеней, двигатель бензиновый 1,6</p>
                             </div>
                           </button>
-                          <button data-id="prize-button" class="flex flex-col w-full lg:w-1/2 bg-orange py-7 text-left" aria-label="Подробнее">
-                            <div aria-hidden="true"
-                                 class="pl-7 flex items-center text-white mb-5">
+                          <button data-id="prize-button" class="flex flex-col items-center md:items-start w-full md:w-1/2 bg-orange py-7 text-left" aria-label="Подробнее">
+                            <div aria-hidden="true" class="pl-7 flex items-center self-start text-white mb-5">
                               <span class="mr-4 text-3xl font-sf">2</span>
                               <svg width="33" height="8" viewBox="0 0 53 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path
-                                      d="M52.3536 4.35355C52.5488 4.15829 52.5488 3.84171 52.3536 3.64645L49.1716 0.464466C48.9763 0.269204 48.6597 0.269204 48.4645 0.464466C48.2692 0.659728 48.2692 0.976311 48.4645 1.17157L51.2929 4L48.4645 6.82843C48.2692 7.02369 48.2692 7.34027 48.4645 7.53553C48.6597 7.7308 48.9763 7.7308 49.1716 7.53553L52.3536 4.35355ZM0 4.5H52V3.5H0V4.5Z"
-                                      fill="#FFFFFF"/>
+                                  <path d="M52.3536 4.35355C52.5488 4.15829 52.5488 3.84171 52.3536 3.64645L49.1716 0.464466C48.9763 0.269204 48.6597 0.269204 48.4645 0.464466C48.2692 0.659728 48.2692 0.976311 48.4645 1.17157L51.2929 4L48.4645 6.82843C48.2692 7.02369 48.2692 7.34027 48.4645 7.53553C48.6597 7.7308 48.9763 7.7308 49.1716 7.53553L52.3536 4.35355ZM0 4.5H52V3.5H0V4.5Z" fill="#FFFFFF"></path>
                               </svg>
                             </div>
                             <div data-content-id="info"
                                  aria-hidden="true"
-                                 class="flex w-full items-center justify-center border relative rounded-full border-white w-48 h-48 ml-5">
+                                 class="flex w-full items-center justify-center border relative rounded-full border-white w-48 h-48 md:ml-5 mb-10 md:mb-0">
                               <div class="flex items-end justify-end absolute">
-                                <div class="with-caption text-white text-9xl font-sf"
-                                    data-caption="подарочных
+                                <div class="with-caption text-white text-9xl xl:text-8xl font-sf" data-caption="подарочных
                                     карт планета">
                                   45
                                 </div>
@@ -196,27 +202,27 @@
                 </section>
 
                 <section id="rules">
-                    <div class="mb-24">
-                        <div class="flex items-center mb-10">
-                          <div class="flex items-center justify-center border border-black w-24 h-24 mr-5 rounded-full">
-                              <svg width="55" height="8" viewBox="0 0 53 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path
-                                      d="M52.3536 4.35355C52.5488 4.15829 52.5488 3.84171 52.3536 3.64645L49.1716 0.464466C48.9763 0.269204 48.6597 0.269204 48.4645 0.464466C48.2692 0.659728 48.2692 0.976311 48.4645 1.17157L51.2929 4L48.4645 6.82843C48.2692 7.02369 48.2692 7.34027 48.4645 7.53553C48.6597 7.7308 48.9763 7.7308 49.1716 7.53553L52.3536 4.35355ZM0 4.5H52V3.5H0V4.5Z"
-                                      fill="#2D2D2D"/>
-                              </svg>
-                          </div>
-                          <h4 class="text-2xl text-black uppercase font-semibold">Правила участия</h4>
+                    <div class="mb-12 md:mb-24">
+                        <div class="flex md:items-center mb-10">
+                            <div class="flex items-center flex-none justify-center border border-black w-8 h-8 md:w-24 md:h-24 mr-4 rounded-full arrow">
+                                <svg width="55" height="8" viewBox="0 0 53 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M52.3536 4.35355C52.5488 4.15829 52.5488 3.84171 52.3536 3.64645L49.1716 0.464466C48.9763 0.269204 48.6597 0.269204 48.4645 0.464466C48.2692 0.659728 48.2692 0.976311 48.4645 1.17157L51.2929 4L48.4645 6.82843C48.2692 7.02369 48.2692 7.34027 48.4645 7.53553C48.6597 7.7308 48.9763 7.7308 49.1716 7.53553L52.3536 4.35355ZM0 4.5H52V3.5H0V4.5Z"
+                                        fill="#2D2D2D"/>
+                                </svg>
+                            </div>
+                            <h4 class="text-xl md:text-2xl text-black uppercase font-semibold">Правила участия</h4>
                         </div>
                         <div class="flex rules">
                           <ol>
                               <div class="lg:flex">
-                                <div class="lg:mr-10">
+                                <div class="lg:mr-10 mb-10 lg:mb-0 pl-12 md:pl-28">
                                     <li>
                                         <span>В период с <strong>10:00 2 августа</strong> по <strong>23:00 10 сентября 2021г.</strong> совершайте покупку(-и) на сумму более 2000 рублей в одном чеке в ТРЦ «Планета» или от 3500 рублей в гипермаркете «Лента».</span>
                                       </li>
                                       <li><span>Зарегистрируйте чек (-и) и получите счастливый купон.</span></li>
                                 </div>
-                                <div>
+                                <div class="lg:mb-0 pl-12 md:pl-28 lg:pl-12">
                                     <li><span><strong>11 сентября 2021г. в 14:00</strong> следите за онлайн-трансляцией розыгрыша на официальной странице акции и станьте обладателем одного из двух новеньких автомобилей Hyundai Solaris или 45 подарочных карт «Планета».</span></li>
                                     <li><span><strong>Для вакцинированных</strong> участников акции <strong>второй купон</strong><br/>в подарок.</span></li>
                                 </div>
@@ -224,44 +230,44 @@
                         </div>
                       </div>
                 </section>
-                <section class="mb-28" id="coupons">
-                    <div class="flex items-center mb-10">
-                        <div class="flex items-center justify-center border border-black w-24 h-24 mr-5 rounded-full">
+                <section class="mb-12 lg:mb-28" id="coupons">
+                    <div class="flex md:items-center mb-10">
+                        <div class="flex items-center flex-none justify-center border border-black w-8 h-8 md:w-24 md:h-24 mr-4 rounded-full arrow">
                             <svg width="55" height="8" viewBox="0 0 53 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M52.3536 4.35355C52.5488 4.15829 52.5488 3.84171 52.3536 3.64645L49.1716 0.464466C48.9763 0.269204 48.6597 0.269204 48.4645 0.464466C48.2692 0.659728 48.2692 0.976311 48.4645 1.17157L51.2929 4L48.4645 6.82843C48.2692 7.02369 48.2692 7.34027 48.4645 7.53553C48.6597 7.7308 48.9763 7.7308 49.1716 7.53553L52.3536 4.35355ZM0 4.5H52V3.5H0V4.5Z"
                                     fill="#2D2D2D"/>
                             </svg>
                         </div>
-                        <h4 class="text-2xl text-black uppercase font-semibold">Купоны</h4>
+                        <h4 class="text-xl md:text-2xl text-black uppercase font-semibold">Купоны</h4>
                     </div>
                     <div class="flex items-center relative">
-                        <div class="coupons-overlay w-2/3 py-14">
-                            <ol class="relative">
-                                <li><a href="#">Видеоинструкция</a></li>
+                        <div class="coupons-overlay xl:w-2/3 py-14">
+                            <ol class="relative pb-16 md:pb-0 pt-16 lg:pt-0">
+                                <li><a href="#" id="open-video-modal">Видеоинструкция</a></li>
                                 <li><a href="#">Скачать правила акции</a></li>
                                 <li><a href="#">Согласие на обработку персональных данных</a></li>
                                 <li><a href="#">Ваши вопросы - наши ответы</a></li>
                             </ol>
                         </div>
-                        <div class="w-1/3 bg-white">
-                            <div class="coupons-car">
-                                <img class="coupons-car-image lazy" data-src="img/car-blue-min.png" />
-                            </div>
+                        <div class="coupons-car">
+                            <img class="coupons-car-image lazy" data-src="img/car-blue-min.png" src="img/car-blue-min.png"/>
+                        </div>
+                        <div class="w-1/3 bg-white hidden lg:flex">
                         </div>
                     </div>
                 </section>
                 <section id="lk">
-                    <div class="mb-24">
-                        <div class="flex items-center mb-10">
-                            <div class="flex items-center justify-center border border-black w-24 h-24 mr-5 rounded-full">
+                    <div class="mb-12 md:mb-24">
+                        <div class="flex md:items-center mb-10">
+                            <div class="flex items-center flex-none justify-center border border-black w-8 h-8 md:w-24 md:h-24 mr-4 md:mr-5 rounded-full arrow">
                                 <svg width="55" height="8" viewBox="0 0 53 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M52.3536 4.35355C52.5488 4.15829 52.5488 3.84171 52.3536 3.64645L49.1716 0.464466C48.9763 0.269204 48.6597 0.269204 48.4645 0.464466C48.2692 0.659728 48.2692 0.976311 48.4645 1.17157L51.2929 4L48.4645 6.82843C48.2692 7.02369 48.2692 7.34027 48.4645 7.53553C48.6597 7.7308 48.9763 7.7308 49.1716 7.53553L52.3536 4.35355ZM0 4.5H52V3.5H0V4.5Z"
                                         fill="#2D2D2D"/>
                                 </svg>
                             </div>
-                            <h4 class="text-2xl text-black uppercase font-semibold">Как получить зарегистрированные купоны</h4>
+                            <h4 class="text-xl md:text-2xl text-black uppercase font-semibold">Как получить зарегистрированные купоны</h4>
                         </div>
                         <div class="mb-10 text-blackLighter">
                             <p>Для участия в акции вам необходимо зарегистрировать чек в Личном кабинете mall.id.</p>
@@ -311,6 +317,25 @@
             </div>
         </div>
     </footer>
+
+    <div id="video-modal" class="hidden top-0 left-0 z-50 fixed h-full w-full bg-white p-5 p-10">
+        <button class="mb-12" id="close-video-modal" aria-label="Закрыть видео">
+            <img src="./img/close-icon.svg" aria-hidden="true">
+        </button>
+
+        <div class="w-full h-full flex flex-col items-center justify-center">
+            <iframe id="video"
+                    width="100%"
+                    height="70%"
+                    src=""
+                    title="Видеоинструкция"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    autoplay>
+            </iframe>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.4.0/dist/lazyload.min.js"></script>
     <script src="./js/scripts.js"></script>
