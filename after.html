@@ -62,9 +62,11 @@
                             <img src="./img/close-icon.svg" aria-hidden="true">
                         </button>
                         <ul class="list-none lg:flex text-sm">
-                            <li class="mr-6 mb-6 lg:mb-0"><a class="text-black hover:text-grey p-2" href="#winners">Победители</a></li>
-                            <li class="mr-6 mb-6 lg:mb-0"><a class="text-black hover:text-grey p-2" href="#get-prizes">Получить приз</a></li>
+                            <li class="mr-6 mb-6 lg:mb-0"><a class="text-black hover:text-grey p-2" href="#on-air">Онлайн-трансляция</a></li>
+                            <li class="mr-6 mb-6 lg:mb-0"><a class="text-black hover:text-grey p-2" href="#winners">Выигравшие купоны</a></li>
+                            <li class="mr-6 mb-6 lg:mb-0"><a class="text-black hover:text-grey p-2" href="#get-prizes">Получение призов</a></li>
                             <li class="mr-6 mb-6 lg:mb-0"><a class="text-black hover:text-grey p-2" href="#details">Информация</a></li>
+                            <li class=""><a class="text-black hover:text-grey p-2" href="https://id.mall.tech/auth?mall=6">Личный кабинет</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -73,24 +75,24 @@
         <div class="main-screen">
             <div class="container">
                 <div class="main-screen-content">
-                    <div class class="lg:w-1/3">
-                        <div class="main-period">
+                    <div>
+                        <!-- <div class="main-period">
                             <div class="text-xs mb-2 font-normal">Онлайн-трансляция розыгрыша</div>
                             <div class="main-period-text text-xl">11 сентября в 14:00</div>
-                        </div>
+                        </div> -->
                         <div class="title-wrapper hidden lg:block">
                             <!-- <h1 class="mb-10 text-xl text-white">
                                 Совершайте покупки
                                 и станьте обладателем одного 
                                 из двух авто Hyundai Solaris
                             </h1> -->
-                            <a href="https://id.mall.tech/promos?mall=6" id="" class="button-primary mt-20" aria-label="Узнать номера своих купонов">
+                            <a href="https://id.mall.tech/promos?mall=6" id="" class="button-primary xl:absolute xl:-mt-32 xl:-ml-32" aria-label="Узнать номера своих купонов">
                                 Узнать номера своих купонов
                             </a>
                         </div>
                     </div>
-                    <div class="text-center lg:w-2/3 flex flex-col items-end lg:items-center justify-center">
-                        <div class="h-44 lg:h-72">
+                    <div class="text-center flex flex-col items-end lg:items-center justify-center w-10/12">
+                        <div class="h-44 lg:h-64">
                             <img class="lazy h-full" data-src="./img/caption-min.png" src="./img/caption-min.png" alt="Наши подарки заводят">
                         </div>
                         <div class="w-full">
@@ -237,7 +239,7 @@
                 </section> -->
                 </div>
                 <div class="container">
-                    <section class="my-24" id="results-video">
+                    <section class="my-24" id="on-air">
                         <iframe
                             width="100%"
                             height="500"
@@ -418,7 +420,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="mb-12 -mt-16 lg:mb-20 py-16" id="get-prizes">
+                <section class="mb-12 mt-16 md:-mt-16 lg:mb-20 md:pt-16 pb-20" id="get-prizes">
                     <div class="container">
                         <div class="flex md:items-center mb-10">
                             <div class="flex items-center flex-none justify-center border border-black w-8 h-8 md:w-24 md:h-24 mr-4 rounded-full arrow">
@@ -432,23 +434,23 @@
                         </div>
                         <div>
                             <ol class="flex flex-col md:flex-row">
-                                <li class="mb-5 md:mb-0 md:mr-10 bg-greyLight p-5 rounded-lg">
+                                <li class="mb-5 md:mb-0 md:mr-10 bg-greyLightTr p-5 rounded-lg">
                                     <p>Вручение призов победителям акции «‎Наши подарки заводят»‎ будет осуществляться <strong>с 27 сентября 2021 года по 3 октября 2021 года</strong>
                                         по рабочим дням <strong>с 10:00 до 17:00</strong>
                                         в администрации ТРЦ «Планета»
                                         г. Пермь, ш. Космонавтов, 162Б
                                     </p>
                                 </li>
-                                <li class="mb-5 md:mb-0 md:mr-10 bg-greyLight p-5 rounded-lg">
+                                <li class="mb-5 md:mb-0 md:mr-10 bg-greyLightTr p-5 rounded-lg">
                                     <p>Паспорт гражданина РФ 
                                         с постоянной пропиской, сертификат о вакцинации,
                                         Выигравший чек и купон</p>
                                 </li>
-                                <li class="bg-greyLight p-5 rounded-lg">
+                                <li class="bg-greyLightTr p-5 rounded-lg">
                                     <p>
                                         Подробная информация об органиаторе акции, 
                                         о правилах ее проведения, количестве призов, сроках 
-                                        и порядке их получения в <a href="" class="underline">Правилах акции</a>
+                                        и порядке их получения в <a href="#details" class="underline">правилах акции</a>
                                     </p>
                                 </li>
                             </ol>
